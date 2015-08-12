@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Contracts\JobAPI;
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+class StudentController extends Controller
+{
+    //
+    public function index(Request $request, JobAPI $jobAPI)
+    {
+//        $user = $request->user();
+
+        $jobs = $jobAPI->getJobs();
+
+        return view('students/main', compact('user', 'jobs'));
+    }
+}
