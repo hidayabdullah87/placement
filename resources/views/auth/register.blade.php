@@ -8,7 +8,7 @@
 
         {!! Form::open(['route'=>'auth.register', 'method'=>'post', 'class' => 'form-horizontal']) !!}
 
-        <h2>< User Register</h2>
+        <h2><font color="black">USER</font><font style ="color:#0099CC"> REGISTER</font></h2>
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">Name</label>
             <div class="col-sm-10">

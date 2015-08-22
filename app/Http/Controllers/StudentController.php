@@ -15,8 +15,20 @@ class StudentController extends Controller
     {
 //        $user = $request->user();
 
-        $jobs = $jobAPI->getJobs();
+        $jobs = $jobAPI->searchJobs();
 
         return view('students/main', compact('user', 'jobs'));
+
     }
+
+    public function profile(Request $request, JobAPI $jobAPI)
+    {
+//        $user = $request->user();
+
+        $jobs = $jobAPI->searchJobs();
+
+        return view('students/profile', compact('user', 'jobs'));
+
+    }
+
 }

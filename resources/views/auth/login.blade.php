@@ -9,7 +9,7 @@
 
         {!! Form::open(['route'=>'auth.login', 'method'=>'post', 'class' => 'form-horizontal']) !!}
 
-            <h2>User Login</h2>
+        <h2><font color="black">USER</font><font style ="color:#0099CC"> LOGIN</font></h2><br>
             <div class="form-group @if ($errors->has('email')) has-error @endif">
                 <label for="email" class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-10">
@@ -31,6 +31,7 @@
                     <div class="checkbox">
                         <label>
                             {!! Form::checkbox('remember', 1, false) !!} Remember me
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style ="color:blue" href="register"><u>Don't have an account?</u></a>
                         </label>
                     </div>
                 </div>

@@ -3,6 +3,6 @@
 namespace App\Contracts;
 
 interface JobAPI {
-    public function getJobs($keyword);
+    public function searchJobs($keyword);
     public function getJob($jobkey);
 }

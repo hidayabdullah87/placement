@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
     public function index(JobAPI $jobAPI)
     {
-        $jobs = $jobAPI->getJobs();
+        $jobs = $jobAPI->searchJobs();
 
         return view('main', compact('jobs'));
     }
