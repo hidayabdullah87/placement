@@ -4,8 +4,8 @@
 
     <!-- tabs left -->
 <div class="col-sm-5">
-        <div class="pad1"><br><br>
-            <h2><font color="black">BROWSE JOB</font><font style ="color:#0099CC"> BY</font></h2><br>
+        <div class="pad1"><br>
+            <h2><font color="black">BROWSE JOB</font><font style ="color:#0099CC"> BY</font></h2>
 
             <div class="tabbable tabs-left">
                 <ul class="nav nav-tabs">
@@ -45,20 +45,26 @@
                     <div class="tab-pane" id="c">
                         <h4>Keyword</h4>
 
-                        {{--{!! Form::open(['route'=>'placement.main', 'method'=>'post', 'class' => 'form-horizontal']) !!}--}}
+                        {!! Form::open(['route'=>'placement.query', 'method'=>'get', 'class' => 'form-horizontal']) !!}
                         <div class="col-xs-6">
-                            <input type="text" name = "key" class="form-control" placeholder="Any Keyword"><br>
+                            {!! Form::text("keyword", "", ["class"=>"form-control", "placeholder"=>"Any Keyword"]) !!}
+                            <br>
                         </div>
                             <center>{!! Form::submit('Search', ['class' => 'btn btn-primary']) !!}</center>
-                        {{--{!! Form::close() !!}--}}
+                        {!! Form::close() !!}
                      </div>
 
                     <div class="tab-pane" id="d">
                         <h4>Company</h4>
-                        <div class="col-xs-6">
-                            <input type="text" class="form-control"><br>
-                        </div>
-                        <center><a href="{{ route('placement', 'ibm') }}">{!! Form::submit('SEARCH', ['class' => 'btn btn-primary']) !!}</a></center>
+
+                            {!! Form::open(['route'=>'placement.query', 'method'=>'get', 'class' => 'form-horizontal']) !!}
+                            <div class="col-xs-6">
+                                {!! Form::text("keyword", "", ["class"=>"form-control", "placeholder"=>" "]) !!}
+                                <br>
+                            </div>
+                            <center>{!! Form::submit('Search', ['class' => 'btn btn-primary']) !!}</center>
+                            {!! Form::close() !!}
+
                     </div>
 
 
@@ -69,14 +75,24 @@
                         <a href="{{ route('placement', 'Sandwich Placement') }}"><u>Sandwich Placement</u></a><br>
                     </div>
                 </div>
+
+                <div class="grid_4">
+                    <div class="pad1"><br><br>
+                        <h2><font color="black">LATEST</font><font style ="color:#0099CC"> VACANCIES</font></h2><br>
+                        <ul class="list pad2">
+                            @foreach($jobs as $job)
+                                <li><a href="{{ route('job.detail', $job->jobkey) }}">{{ $job->jobtitle }}</a></li><br>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
             </div>
          </div>
     </div>
             <!-- /tabs -->
 
-    <div class="grid_7 emp_box"><br><br>
-        <h2><font color="black"></font>VIEW SELECTED <font style ="color:#0099CC"> PLACEMENT</font></h2>
-
+    <div class="grid_7 emp_box"><br>
+        <h2><font color="black"></font>VIEW SELECTED <font style ="color:#0099CC"> {{ $keyword }}</font></h2><br>
         @foreach($jobs as $job)
             <div class="col-sm-12">
                 <div class="panel panel-default">
@@ -116,10 +132,12 @@
                             <div class="col-sm-8 col-sm-offset-4">
                                 <br><a class="btn btn-success" href="{{ route('job.detail', $job->jobkey) }}">Go to job page</a>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
+
         @endforeach
     </div>
 @endsection

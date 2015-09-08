@@ -1,3 +1,5 @@
+@yield('header')
+
 <link rel="icon" href="/images/favicon.ico" >
 <link rel="shortcut icon" href="/images/favicon.ico"  />
 <link  rel="stylesheet" media="screen" href="/css/style.css">

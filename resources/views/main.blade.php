@@ -17,8 +17,7 @@
     </div>
 
     <div class="grid_8 emp_box"><br><br>
-      <h2><font color="black"></font>PLACEMENT'S <font style ="color:#0099CC"> CATEGORIES</font></h2>
-
+      <h2><font color="black"></font>PLACEMENTS <font style ="color:#0099CC"> CATEGORIES</font></h2>
       <div class="grid_4 alpha ">
           <a href="{{ route('placement', 'accounting') }}">
             <div class="box maxheight1">
@@ -58,7 +57,7 @@
                 <div class="box maxheight1">
 
                     <img src="images/page1_img4.jpg" alt="">
-                    <div class="extra_wrapper"><p><strong><U><font color="black">Administration</font></U></strong> </p>
+                    <div class="extra_wrapper"><p><strong><U><font color="black">ADMINISTRATOR</font></U></strong> </p>
                         Administrators responsible reception work, record keeping, document organisation and ordering.
                     </div>
                 </div>

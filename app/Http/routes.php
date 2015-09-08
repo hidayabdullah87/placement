@@ -11,6 +11,7 @@
 |
 */
 
+// home routes
 get('/', [ 'as' => 'home', 'uses' => 'HomeController@index' ]);
 
 
@@ -23,25 +24,25 @@ Route::get('auth/logout', [ 'as' => 'auth.logout', 'uses' => 'Auth\AuthControlle
 Route::get('auth/register', [ 'as' => 'auth.register', 'uses' => 'Auth\AuthController@getRegister']);
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-//// Searching placement routes...
-//Route::get('placement/main', [ 'as' => 'placements.main', 'uses' => 'Placement\PlacementController@index']);
-//Route::post('placement/main', 'Placement\PlacementController@index');
-//Route::get('placement/redirect/{keyword}', [ 'as' => 'placement', 'uses' => 'PlacementController@index' ]);
+// Student routes
+get('student', ['middleware' => 'auth', 'as' =>'student', 'uses' => 'StudentController@index' ]);
+get('student/profile', ['middleware' => 'auth', 'as' => 'student/profile', 'uses' => 'StudentController@profile' ]);
 
-get('student', [ 'as' => 'student', 'uses' => 'StudentController@index' ]);
-
-get('student/profile', [ 'as' => 'student/profile', 'uses' => 'StudentController@profile' ]);
-
+// Placement routes
 get('placement/{placement}', [ 'as' => 'placement', 'uses' => 'PlacementController@index' ]);
+get('placement', [ 'as' => 'placement.query', 'uses' => 'PlacementController@indexQuery' ]);
 
+// Search job routes
 get('job/{job_id}', ['as' => 'job.detail', 'uses' => 'JobController@getJob']);
-
 get('job/redirect/{job_id}', ['middleware' => 'auth', 'as' => 'job.indeed', 'uses' => 'JobController@redirectToIndeed']);
 
-get('staff', [ 'as' => 'staff', 'uses' => 'UserController@user' ]);
+// admin routes
+get('admin', ['middleware' => 'auth', 'as' => 'admin', 'uses' => 'UserController@indexall' ]);
+get('admin/user', ['middleware' => 'auth', 'as' => 'admin.user', 'uses' => 'UserController@index' ]);
 
-get('staff', function(){
+get('users/make-admin/{id}', ['middleware' => 'auth', 'as'=>'user.make_admin', 'uses' => 'UserController@makeAdmin']);
+get('users/revoke-admin/{id}', ['middleware' => 'auth', 'as'=>'user.revoke_admin', 'uses' => 'UserController@revokeAdmin']);
 
-    $users = App\User::all();
-    return view('staff', compact('users'));
-});
+// News and Events routes
+Route::resource('news', 'NewsController');get('new/index', ['middleware' => 'auth', 'as' => 'new.index', 'uses' => 'NewsController@index' ]);
+get('newsevent', ['middleware' => 'auth', 'as' => 'newsevent', 'uses' => 'NewsController@view' ]);

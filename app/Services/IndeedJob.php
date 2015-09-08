@@ -25,6 +25,7 @@ class IndeedJob implements JobAPI
         ];
     }
 
+    // do a job search
     public function searchJobs($keyword = 'placement')
     {
         $url = 'https://indeed-indeed.p.mashape.com/apisearch';
@@ -39,16 +40,21 @@ class IndeedJob implements JobAPI
             'jt' => 'internship',
             'co' => 'gb',
             'l' => 'United Kingdom',
-            'limit' => '1000',
-//            'sort' => 'date',
+            'limit' => '100',
+            'sort' => 'date',
             'fromage' => '360',
         ]);
 
+
         $response = $this->client->get($url, $headers, $body);
+
+//        dd($response->body->results);
 
         return $response->body->results;
     }
 
+
+    // Retrieve specific job based on their job keys
     public function getJob($jobkey)
     {
 

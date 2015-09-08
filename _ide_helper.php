@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.1.10 (LTS) on 2015-08-12.
+ * Generated for Laravel 5.1.10 (LTS) on 2015-09-01.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -11889,7 +11889,7 @@ namespace {
     }
 
 
-    class Form extends \Collective\Html\FormFacade{
+    class Form extends \Illuminate\Html\FormFacade{
         
         /**
          * Open up a new HTML form.
@@ -12353,7 +12353,7 @@ namespace {
     }
 
 
-    class Html extends \Collective\Html\HtmlFacade{
+    class Html extends \Illuminate\Html\HtmlFacade{
         
         /**
          * Convert an HTML string to entities.

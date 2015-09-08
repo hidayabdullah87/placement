@@ -147,7 +147,9 @@ return [
 
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-
+        'Illuminate\Html\HtmlServiceProvider',
+        Riari\Forum\ForumServiceProvider::class,
+        Kodeine\Acl\AclServiceProvider::class,
     ],
 
     /*
@@ -198,6 +200,10 @@ return [
 
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+
+        'Form'     => 'Illuminate\Html\FormFacade',
+        'Html'     => 'Illuminate\Html\HtmlFacade',
+
 
     ],
 
