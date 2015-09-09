@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9d65744558f536d10cc1d01da25dfe6a",
+    "hash": "027c48c70b3a2e088951759503f8ffd7",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1084,16 +1084,16 @@
         },
         {
             "name": "riari/laravel-forum",
-            "version": "2.4.4",
+            "version": "dev-laravel-5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Riari/laravel-forum.git",
-                "reference": "3095afd81247df3c5781b14bdecda46d6b256ff6"
+                "url": "https://github.com/hidayabdullah87/laravel-forum.git",
+                "reference": "4749202e08e950be34245b5ee95b9ea06b2fde4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Riari/laravel-forum/zipball/3095afd81247df3c5781b14bdecda46d6b256ff6",
-                "reference": "3095afd81247df3c5781b14bdecda46d6b256ff6",
+                "url": "https://api.github.com/repos/hidayabdullah87/laravel-forum/zipball/4749202e08e950be34245b5ee95b9ea06b2fde4f",
+                "reference": "4749202e08e950be34245b5ee95b9ea06b2fde4f",
                 "shasum": ""
             },
             "require": {
@@ -1109,7 +1109,6 @@
                     "Riari\\Forum\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1127,7 +1126,10 @@
                 "laravel-4",
                 "laravel-5"
             ],
-            "time": "2015-09-06 20:30:14"
+            "support": {
+                "source": "https://github.com/hidayabdullah87/laravel-forum/tree/laravel-5"
+            },
+            "time": "2015-09-09 02:56:08"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3269,6 +3271,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "riari/laravel-forum": 20,
         "kodeine/laravel-acl": 20
     },
     "prefer-stable": false,
