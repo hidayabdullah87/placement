@@ -144,8 +144,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         'Illuminate\Html\HtmlServiceProvider',
         Riari\Forum\ForumServiceProvider::class,

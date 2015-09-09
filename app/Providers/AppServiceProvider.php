@@ -25,5 +25,9 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         $this->app->bind(\App\Contracts\JobAPI::class, \App\Services\IndeedJob::class);
+
+        if( app()->environment('local') ){
+            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
+        }
     }
 }

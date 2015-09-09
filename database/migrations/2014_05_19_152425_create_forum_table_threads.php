@@ -15,11 +15,11 @@ class CreateForumTableThreads extends Migration {
 		Schema::create('forum_threads', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('parent_category')->unsigned();
-			$table->integer('author_id')->unsigned();
+			$table->integer('parent_category')->nullable()->unsigned();
+			$table->integer('author_id')->nullable()->unsigned();
 			$table->string('title');
-			$table->integer('pinned')->unsigned();
-			$table->integer('locked')->unsigned();
+			$table->integer('pinned')->nullable()->unsigned();
+			$table->integer('locked')->nullable()->unsigned();
 
 			$table->timestamps();
 			$table->softDeletes();
